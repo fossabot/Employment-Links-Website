@@ -1,0 +1,27 @@
+{
+  "name": "website-employment-links",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon app.js --set NODE_ENV=development",
+    "sass": "sass --watch views\\styles\\main.scss:public\\styles\\main.css",
+    "h2p": "html2pug < temp/html.html > temp/pug.pug"
+  },
+  "author": "Cameron Smith",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.1.0",
+    "electricity": "^2.5.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "html2pug": "^3.0.0",
+    "less-watch-compile": "^2.1.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.11"
+  }
+}
