@@ -8,57 +8,44 @@ spacer.setAttribute( 'style', 'height: 70px;' );
 
 
 function headerMorph() {
+  console.log( 'headerMorph' )
   var viewTop = window.scrollY;
+  console.log( viewTop )
   if ( viewTop > 70 * 5 ) {
+    console.log( 'should go' )
     if ( !header.classList.contains( 'shadow' ) ) header.classList.add( 'shadow' );
-    if ( !header.classList.contains( 'fixed-top' ) ) header.classList.add( 'fixed-top' );
+    if ( !header.classList.contains( 'sticky-top' ) ) header.classList.add( 'sticky-top' );
     main.prepend( spacer );
   } else {
+    console.log( 'should undo' )
     if ( document.querySelector( '#spacer' ) ) document.querySelector( '#spacer' ).remove();
     if ( header.classList.contains( 'shadow' ) ) header.classList.remove( 'shadow' );
-    if ( header.classList.contains( 'fixed-top' ) ) header.classList.remove( 'fixed-top' );
+    if ( header.classList.contains( 'sticky-top' ) ) header.classList.remove( 'sticky-top' );
   }
 }
 
 
-const slideoutMenu = document.querySelector( '#menu' ).cloneNode( true );
+var slideoutMenu = document.querySelector( '#menu' ).cloneNode( true );
+var slideout = new Slideout( {
+  'panel': document.getElementById( 'main' ),
+  'menu': document.getElementById( 'menu' ),
+  'padding': 320,
+  'tolerance': 70,
+  'touch': false
+} );
 
 function manageSlideout() {
-  const windowWidth = window.innerWidth;
-  if ( windowWidth < 768 ) {
-    document.querySelector( '#menu' ).classList.remove( 'hidden' );
-    if ( !document.querySelector( '#menu' ) ) {
-      document.querySelector( 'body' ).prepend( slideoutMenu );
-    }
-    var slideout = new Slideout( {
-      'panel': document.getElementById( 'main' ),
-      'menu': document.getElementById( 'menu' ),
-      'padding': 320,
-      'tolerance': 70,
-      'touch': false
-    } );
+  document.querySelector( 'header button' ).addEventListener( 'click', function () {
+    slideout.toggle();
+  } );
 
-    document.querySelector( 'header button' ).addEventListener( 'click', function () {
-      slideout.open();
-    } );
+  document.querySelector( '#menu button.close' ).addEventListener( 'click', function () {
+    slideout.toggle();
+  } );
 
-    document.querySelector( '#menu button.close' ).addEventListener( 'click', function () {
-      slideout.close();
-    } );
-  } else {
-    if ( document.querySelector( '#menu' ) ) {
-      document.querySelector( 'header button' ).removeEventListener( 'click', function () {
-        slideout.open();
-      } );
-      document.querySelector( '#menu button.close' ).removeEventListener( 'click', function () {
-        slideout.close();
-      } );
-      document.querySelector( '#menu' ).remove();
-    }
-  }
 }
 
 onloadFns.push( headerMorph, manageSlideout );
-onresizeFns.push( manageSlideout );
+onresizeFns.push( manageSlideout);
 
 window.onscroll = headerMorph;

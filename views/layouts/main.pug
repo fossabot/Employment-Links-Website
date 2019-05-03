@@ -1,14 +1,16 @@
 doctype html
-include ../components/meta/head.pug
+html(lang="en")
+  head
+    include ../components/meta/head.pug
 
-body
-  include ../components/header/slideout.pug
+  body
+    include ../components/header/slideout.pug
 
-  main.container-fluid.main.p-0.m-0#main
-    include ../components/header/header.pug
+    .container-fluid.main.p-0.m-0#main
+      include ../components/header/header.pug
 
-    block content
+      block content
 
-    include ../components/footer/footer.pug
+      include ../components/footer/footer.pug
 
-  include ../components/meta/scripts.pug
+    include ../components/meta/scripts.pug
