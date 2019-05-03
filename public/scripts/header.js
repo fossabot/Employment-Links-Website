@@ -42,27 +42,22 @@ function manageSlideout() {
     } );
 
     document.querySelector( 'header button' ).addEventListener( 'click', function () {
-      document.querySelector( '#shadow' ).classList.add( 'on' );
       document.querySelector( '#shadow' ).classList.remove( 'off' );
-      slideout.open();
+      slideout.toggle();
     } );
 
     document.querySelector( '#menu button.close' ).addEventListener( 'click', function () {
       document.querySelector( '#shadow' ).classList.add( 'off' );
-      document.querySelector( '#shadow' ).classList.remove( 'on' );
-      slideout.close();
+      slideout.toggle();
     } );
   } else {
     if ( document.querySelector( '#menu' ) ) {
       document.querySelector( '#menu' ).remove();
       document.querySelector( 'header button' ).removeEventListener( 'click', function () {
-        document.querySelector( '#shadow' ).classList.add( 'on' );
-        document.querySelector( '#shadow' ).classList.remove( 'off' );
         slideout.open();
       } );
       document.querySelector( '#menu button.close' ).removeEventListener( 'click', function () {
         document.querySelector( '#shadow' ).classList.add( 'off' );
-        document.querySelector( '#shadow' ).classList.remove( 'on' );
         slideout.close();
       } );
     }
