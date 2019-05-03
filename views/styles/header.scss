@@ -1,12 +1,11 @@
 /* stylelint-disable  */
 
-header.fixed-top {
-  top: -70px;
-  // transform: translateY(70px);
-  // transition: 400ms;
-  -webkit-transform: translateY(70px);
-  -webkit-transition: -webkit-transform 400ms;
-}
+// header.fixed-top {
+//   position: fixed;
+//   top: -70px;
+//   transform: translateY(70px);
+//   transition: 200ms;
+// }
 
 header {
   ul {
@@ -64,24 +63,4 @@ header {
   display: block;
 }
 
-@media screen and (max-width: 768px) {
-  header {
-    &:not(.fixed-top) {
-      .container {
-        width: 100vw;
-        padding: 0;
-
-        .navbar {
-          width: 100vw;
-          padding: 0;
-        }
-      }
-      .navbar-collapse {
-
-        width: 100vw;
-        background-color: #25282b;
-      }
-    }
-  }
-}
 

@@ -4,8 +4,8 @@ script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.m
 script(src='/scripts/bootstrap.bundle.min.js')
 script(src='/scripts/slideout.min.js')
 script.
-  window.onresizeFns = [];
-  window.onloadFns = [];
+  var onresizeFns = [];
+  var onloadFns = [];
   //- Set link attributes based on text
   var navLink = document.querySelectorAll('a.nav-link');
   navLink.forEach(function(a){
@@ -49,8 +49,9 @@ block pageScripts
 
 script.
   window.onload = function(){
-    window.onloadFns.forEach(function(fn) { fn() });
+    onloadFns.forEach(function(fn) { fn() });
   }
+
   window.onresize = function(){
-    window.onresizeFns.forEach(function(fn) { fn() });
+    onresizeFns.forEach(function(fn) { fn() });
   }

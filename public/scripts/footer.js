@@ -2,7 +2,7 @@
 
 function moveContactInfo() {
   const contactColumn = document.querySelector( '#footer-contact' ),
-    contactColumnClone = contactColumn.cloneNode(true),
+    contactColumnClone = contactColumn.cloneNode( true ),
     footerRow = document.querySelector( '#footer-main-row' );
 
   const windowWidth = window.innerWidth;
@@ -28,7 +28,5 @@ function setMargin() {
   mainFooter.setAttribute( 'style', 'margin-bottom: ' + subfooterHeight + 'px; ' );
 }
 
-moveContactInfo();
-setMargin();
-
-window.onresizeFns.push( moveContactInfo, setMargin );
+onloadFns.push( moveContactInfo, setMargin );
+onresizeFns.push( moveContactInfo, setMargin );

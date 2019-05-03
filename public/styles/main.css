@@ -9490,12 +9490,6 @@ h6 {
 }
 
 /* stylelint-disable  */
-header.fixed-top {
-  top: -70px;
-  -webkit-transform: translateY(70px);
-  -webkit-transition: -webkit-transform 400ms;
-}
-
 header ul a.nav-link {
   font-size: 1.3rem;
 }
@@ -9546,20 +9540,6 @@ header ul a.nav-link {
   display: block;
 }
 
-@media screen and (max-width: 768px) {
-  header:not(.fixed-top) .container {
-    width: 100vw;
-    padding: 0;
-  }
-  header:not(.fixed-top) .container .navbar {
-    width: 100vw;
-    padding: 0;
-  }
-  header:not(.fixed-top) .navbar-collapse {
-    width: 100vw;
-    background-color: #25282b;
-  }
-}
 footer.fixed-bottom {
   z-index: -9;
 }
@@ -9896,33 +9876,9 @@ footer p.footer-nav-title {
     font-size: 0.85rem;
   }
 }
-.shaded {
-  box-shadow: inset 30px 30px 4px rgba(0, 0, 0, 0.65);
-}
-
-main.main, #shadow {
+main.main {
   width: 100vw;
   padding: 0;
-}
-
-#shadow {
-  position: absolute;
-  top: 0;
-  left: -1px;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.25);
-  opacity: 0;
-  z-index: 999;
-  rotate: 180deg;
-  display: block;
-}
-#shadow.off {
-  display: none;
-}
-#shadow.on {
-  opacity: 1;
-  transition: opacity 500ms;
 }
 
 section.opportunities i {

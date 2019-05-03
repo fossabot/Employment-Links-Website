@@ -6,10 +6,10 @@ var spacer = document.createElement( 'div' );
 spacer.setAttribute( 'id', 'spacer' )
 spacer.setAttribute( 'style', 'height: 70px;' );
 
+
 function headerMorph() {
-  var viewTop = window.scrollY,
-    headerHeight = header.offsetHeight;
-  if ( viewTop > headerHeight * 10 ) {
+  var viewTop = window.scrollY;
+  if ( viewTop > 70 * 5 ) {
     if ( !header.classList.contains( 'shadow' ) ) header.classList.add( 'shadow' );
     if ( !header.classList.contains( 'fixed-top' ) ) header.classList.add( 'fixed-top' );
     main.prepend( spacer );
@@ -18,9 +18,6 @@ function headerMorph() {
     if ( header.classList.contains( 'shadow' ) ) header.classList.remove( 'shadow' );
     if ( header.classList.contains( 'fixed-top' ) ) header.classList.remove( 'fixed-top' );
   }
-  window.setTimeout( function () {
-    return;
-  }, 500 );
 }
 
 
@@ -28,7 +25,7 @@ const slideoutMenu = document.querySelector( '#menu' ).cloneNode( true );
 
 function manageSlideout() {
   const windowWidth = window.innerWidth;
-  if ( innerWidth < 768 ) {
+  if ( windowWidth < 768 ) {
     document.querySelector( '#menu' ).classList.remove( 'hidden' );
     if ( !document.querySelector( '#menu' ) ) {
       document.querySelector( 'body' ).prepend( slideoutMenu );
@@ -42,32 +39,26 @@ function manageSlideout() {
     } );
 
     document.querySelector( 'header button' ).addEventListener( 'click', function () {
-      document.querySelector( '#shadow' ).classList.remove( 'off' );
-      slideout.toggle();
+      slideout.open();
     } );
 
     document.querySelector( '#menu button.close' ).addEventListener( 'click', function () {
-      document.querySelector( '#shadow' ).classList.add( 'off' );
-      slideout.toggle();
+      slideout.close();
     } );
   } else {
     if ( document.querySelector( '#menu' ) ) {
-      document.querySelector( '#menu' ).remove();
       document.querySelector( 'header button' ).removeEventListener( 'click', function () {
         slideout.open();
       } );
       document.querySelector( '#menu button.close' ).removeEventListener( 'click', function () {
-        document.querySelector( '#shadow' ).classList.add( 'off' );
         slideout.close();
       } );
+      document.querySelector( '#menu' ).remove();
     }
   }
 }
 
-headerMorph();
-manageSlideout();
-
-window.onloadFns.push( headerMorph, manageSlideout );
-window.onresizeFns.push( manageSlideout );
+onloadFns.push( headerMorph, manageSlideout );
+onresizeFns.push( manageSlideout );
 
 window.onscroll = headerMorph;

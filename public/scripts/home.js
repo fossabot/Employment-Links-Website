@@ -109,6 +109,7 @@ function resizeCalibration() {
   section0.setAttribute( 'style', ( initialSection0Style ) + 'min-height: ' + ( textHeight + bridgeHeight + 40 ) + 'px; ' );
 }
 
-window.load = resizeCalibration();
 
-window.onresizeFns.push( resizeCalibration );
+
+onloadFns.push( resizeCalibration );
+onresizeFns.push( resizeCalibration );

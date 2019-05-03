@@ -5,9 +5,10 @@ body
   include ../components/header/slideout.pug
 
   main.container-fluid.main.p-0.m-0#main
-    .container-fluid.p-0.m-0.off#shadow
     include ../components/header/header.pug
+
     block content
+
     include ../components/footer/footer.pug
 
   include ../components/meta/scripts.pug
