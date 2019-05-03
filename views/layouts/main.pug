@@ -4,13 +4,14 @@ html(lang="en")
     include ../components/meta/head.pug
 
   body
-    include ../components/header/slideout.pug
-
     .container-fluid.main.p-0.m-0#main
-      include ../components/header/header.pug
-
+      include ../components/header/header-bsnav-1.pug
+      #spacer
       block content
 
       include ../components/footer/footer.pug
 
+    .bsnav-mobile
+      .bsnav-mobile-overlay
+      .navbar
     include ../components/meta/scripts.pug

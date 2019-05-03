@@ -1,11 +1,13 @@
-section.fdb-block.py-5
-  .container.bg-r.py-5.my-5(style="background-image: url(images/bridge.jpg)")
+section.fdb-block.py-5.bg-image-fixed.flex-col(style="background-image: url(images/splitrock-moon.jpg); min-height: 70vh;")
+  .overlay
+  .container.bg-r.py-5.my-5.flex-col
+    img(src="/images/logo-text-w.png", width="300px")
     .row.py-5
-      .col-12.col-sm-10.col-md-8.col-lg-6.text-left
-        h1
-          span We Bridge the Gap <br/>
-          small.text-muted To a Stronger Community
-        p.lead.
-          A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-        //- p.mt-4
-          //- a.btn.btn-primary(href='') Download
+      .col-12.text-center
+        h1.display-1.display-switch.d1.text-white
+          span Bridging the Gap
+          br
+          span.display-4.display-switch.d4
+            small To a Stronger Community
+        //- p.lead.text-white.
+        //-   A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
