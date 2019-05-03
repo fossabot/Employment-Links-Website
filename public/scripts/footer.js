@@ -20,6 +20,15 @@ function moveContactInfo() {
   }
 }
 
-moveContactInfo();
+function setMargin() {
+  const mainFooter = document.querySelector( '#footer-main-row' ),
+    subfooter = document.querySelector( '#subfooter' ),
+    subfooterHeight = subfooter.getBoundingClientRect().height;
 
-window.onresizeFns.push( moveContactInfo );
+  mainFooter.setAttribute( 'style', 'margin-bottom: ' + subfooterHeight + 'px; ' );
+}
+
+moveContactInfo();
+setMargin();
+
+window.onresizeFns.push( moveContactInfo, setMargin );

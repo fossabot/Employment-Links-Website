@@ -9,12 +9,21 @@ footer {
         color: #fff !important;
       }
     }
+    &.nav-link {
+      font-size: 1.2rem;
+    }
   }
 
   p {
     &.footer-nav-title {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: 500;
     }
   }
+
+
+}
+
+#subfooter {
+  background-color: #25282b;
 }

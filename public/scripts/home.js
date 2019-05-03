@@ -14,7 +14,8 @@ function mobileAdjustment() {
     careerCard = document.querySelector( '#secondary' ),
     careerCardClone = careerCard.cloneNode( -1 ),
     cardButtons = oppCardRow.getElementsByTagName( 'a' );
-  if ( window.screen.width <= 600 ) {
+  if ( window.screen.width <= 768 ) {
+
     oppCardRow.removeChild( serviceCard );
     oppCardRow.removeChild( careerCard );
     oppCardRow.prepend( careerCardClone );
@@ -55,16 +56,6 @@ var birds = '<div class="birdcontainer"><div class="bird-container bird-containe
 var bridge = document.querySelector( '#bridge' ),
   bridgeBCR = bridge.getBoundingClientRect();
 var bridgeClicks = [];
-
-window.load = ( function () {
-  mobileAdjustment();
-
-  var textHeight = section0row.clientHeight,
-    bridgeHeight = bridge.clientHeight;
-  section0.setAttribute( 'style', ( section0.getAttribute( 'style' ) || '' ) + 'min-height: ' + ( textHeight + bridgeHeight + 40 ) + 'px; ' );
-
-
-} )()
 
 bridge.addEventListener( 'click',
   function () {
@@ -108,6 +99,16 @@ function containBridge() {
   bridge.classList.remove( 'hidden' );
 }
 
-containBridge();
+const initialSection0Style = section0.getAttribute( 'style' ) || '';
+function resizeCalibration() {
+  containBridge();
+  mobileAdjustment();
 
-window.onresizeFns.push( mobileAdjustment, containBridge );
+  var textHeight = section0row.getBoundingClientRect().height,
+    bridgeHeight = bridge.getBoundingClientRect().height;
+  section0.setAttribute( 'style', ( initialSection0Style ) + 'min-height: ' + ( textHeight + bridgeHeight + 40 ) + 'px; ' );
+}
+
+window.load = resizeCalibration();
+
+window.onresizeFns.push( resizeCalibration );

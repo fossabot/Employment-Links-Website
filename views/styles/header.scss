@@ -1,7 +1,7 @@
 /* stylelint-disable  */
 
 header.fixed-top {
-  top:-70px;
+  top: -70px;
   // transform: translateY(70px);
   // transition: 400ms;
   -webkit-transform: translateY(70px);
@@ -15,3 +15,73 @@ header {
     }
   }
 }
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 325px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+  background-color: #25282b;
+
+  button {
+    &.close {
+      background-color: #31363a;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    &:not(.fixed-top) {
+      .container {
+        width: 100vw;
+        padding: 0;
+
+        .navbar {
+          width: 100vw;
+          padding: 0;
+        }
+      }
+      .navbar-collapse {
+
+        width: 100vw;
+        background-color: #25282b;
+      }
+    }
+  }
+}
+
