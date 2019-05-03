@@ -1,17 +1,25 @@
 /* eslint-disable */
-var allSections = document.querySelectorAll( 'section' ),
-  firstSection = allSections[ 0 ],
-  lastSection = allSections[ allSections.length - 1 ];
 
-function setFooterMargin() {
-  var footer = document.querySelector( 'footer' ),
-    footerHeight = footer.offsetHeight;
+function moveContactInfo() {
+  const contactColumn = document.querySelector( '#footer-contact' ),
+    contactColumnClone = contactColumn.cloneNode(true),
+    footerRow = document.querySelector( '#footer-main-row' );
 
-  var lastSectionStyle = lastSection.getAttribute( 'style' ) || '';
+  const windowWidth = window.innerWidth;
 
-  lastSection.setAttribute( 'style', lastSectionStyle + ' margin-bottom: ' + footerHeight + 'px; ' );
+  if ( windowWidth < 768 &&
+    footerRow.children[ footerRow.children.length - 1 ].id === 'footer-contact' ) {
+    contactColumn.remove();
+    contactColumnClone.classList.add( 'pb-5' );
+    footerRow.prepend( contactColumnClone );
+
+  } else if ( windowWidth > 768 &&
+    footerRow.children[ 0 ].id === 'footer-contact' ) {
+    contactColumn.remove();
+    footerRow.append( contactColumnClone );
+  }
 }
 
-setFooterMargin();
+moveContactInfo();
 
-window.onResizeFns.push( setFooterMargin );
+window.onresizeFns.push( moveContactInfo );

@@ -1,3 +1,20 @@
 footer.fixed-bottom {
   z-index: -9;
 }
+
+footer {
+  a {
+    &.text-secondary {
+      &:hover {
+        color: #fff !important;
+      }
+    }
+  }
+
+  p {
+    &.footer-nav-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+}

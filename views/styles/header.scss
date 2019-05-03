@@ -2,7 +2,16 @@
 
 header.fixed-top {
   top:-70px;
-  transform: translateY(70px);
-  transition: 400ms;
+  // transform: translateY(70px);
+  // transition: 400ms;
+  -webkit-transform: translateY(70px);
+  -webkit-transition: -webkit-transform 400ms;
+}
 
+header {
+  ul {
+    a.nav-link {
+      font-size: 1.3rem;
+    }
+  }
 }

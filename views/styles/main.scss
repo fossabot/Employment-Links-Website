@@ -7,24 +7,26 @@
 @import './components';
 @import './birds';
 
-// header {
-//   // font-size: 1.5em;
-//   position: sticky !important;
-//   top: 0;
-//   z-index: 999;
+@media screen and (max-width: 768px){
+  body {
+    p, a {
+      font-size: 0.85rem !important;
+    }
+  }
+}
 // }
 
 section {
   &.opportunities {
     i {
-      text-shadow: 0px 6px 38px rgba(0, 0, 0, 0.35);
+      // text-shadow: 0px 6px 38px rgba(0, 0, 0, 0.35);
       font-size: 6rem;
       margin: 1rem;
     }
 
     #primary {
       i {
-        font-size: 9rem;
+        // font-size: 9rem;
       }
     }
   }

@@ -24,11 +24,7 @@ function mobileAdjustment() {
       el.classList.remove( 'display-1', 'display-2', 'display-3', 'display-4' )
     } );
 
-    for (var i = 0; i < cardButtons.length; i++) {
-      var btn = cardButtons[i];
-      btn.classList.remove( 'btn-outline-light' );
-      btn.classList.add( 'btn-light', 'btn-lg', 'btn-block' );
-    }
+
   } else {
     oppCardRow.removeChild( serviceCard );
     oppCardRow.removeChild( careerCard );
@@ -41,12 +37,7 @@ function mobileAdjustment() {
       if ( classList.contains( 'd3' ) ) classList.add( 'display-3' );
       if ( classList.contains( 'd4' ) ) classList.add( 'display-4' );
     } );
-    for ( var i = 0; i < cardButtons.length; i++ ) {
-      if ( i === 1 ) continue;
-      var btn = cardButtons[i];
-      btn.classList.add( 'btn-outline-light' );
-      btn.classList.remove( 'btn-light', 'btn-lg', 'btn-block' );
-    }
+
   }
 }
 
@@ -91,6 +82,8 @@ bridge.addEventListener( 'click',
 
 
 function containBridge() {
+  bridge.classList.add( 'hidden' );
+
   var styleRule = function ( value ) {
     return 'right: ' + value + ';'
   }
@@ -111,6 +104,8 @@ function containBridge() {
       bridge.setAttribute( 'style', styleRule( '0' ) );
     } else bridge.setAttribute( 'style', styleRule( '20vw' ) );
   }
+
+  bridge.classList.remove( 'hidden' );
 }
 
 containBridge();
