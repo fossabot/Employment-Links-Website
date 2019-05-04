@@ -1,7 +1,6 @@
 const express = require( 'express' ),
   path = require( 'path' ),
   pug = require( 'pug' ),
-  electricity = require( 'electricity' ),
   config = require( 'config' );
 
 const compiler = pug.compileFile,
