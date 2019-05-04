@@ -1,0 +1,21 @@
+body {
+	background-color: #7ed2f3;
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+svg {
+	max-width: 100%;
+	max-height: 100%;
+	overflow: visible !important;
+}
+
+#large-one,#medium-one,#small-one,#large-two,#medium-two,#small-two{
+	opacity:0;
+}
