@@ -6,19 +6,24 @@ header.navbar.navbar-expand-sm.bsnav.bsnav-sticky.bsnav-sticky-slide
       span.navbar-toggler-icon
     .collapse.navbar-collapse.justify-content-md-end
       ul.navbar-nav.navbar-mobile.mr-0
+        li.nav-item.px-3
+          a.nav-link(href='/') Home
         li.nav-item.px-3.dropdown.dropdown-horizontal
-          a.nav-link(href='#') Services
+          a.nav-link(href='/services') Services
+            i.caret
           ul.nav.nav-pills.navbar-nav.border-bottom.shadow-sm
             .container.text-right.px-4
               li.nav-item.mr-3.px-3
-                a.nav-link Test
+                a.nav-link(href='/services') Services Home
               li.nav-item.mr-3.px-3
-                a.nav-link Test
+                a.nav-link(href='/services-overview') Overview
+              li.nav-item.mr-3.px-3
+                a.nav-link(href='/services-person-centered') Person-Centered
               li.nav-item.pl-3
-                a.nav-link Test
+                a.nav-link(href='/services-referral') Referral
         li.nav-item.px-3
-          a.nav-link(href='#') Careers
+          a.nav-link(href='/careers') Careers
         li.nav-item.px-3
-          a.nav-link(href='#') Partners
+          a.nav-link(href='/partners') Partners
         li.nav-item.px-3
-          a.nav-link(href='#') Contact
+          a.nav-link(href='/contact') Contact

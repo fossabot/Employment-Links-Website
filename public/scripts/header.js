@@ -7,3 +7,4 @@ spacer.setAttribute( 'id', 'spacer' )
 spacer.setAttribute( 'style', 'height: '+headerHeight+'px;' );
 
 document.querySelector('section').prepend( spacer );
+

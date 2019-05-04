@@ -29,11 +29,13 @@ script.
     footerHeight = footer.offsetHeight;
 
   // Set active page class
-  var page = window.location.pathname.split('/')
-    page = page[page.length - 1]
+  var page = window.location.pathname.split('/');
+  if (page.length > 0) page = page[page.length - 1];
+  else if (page === 'home') page = '';
+  page = '/' + page;
   var nav = document.querySelector('a[href="' + page + '"]')
   if (nav) {
-    nav.classList.add('active')
+    nav.parentElement.classList.add('active')
   }
 
 
