@@ -21,8 +21,8 @@ app.set( 'view engine', 'pug' );
 function handler( req ) {
   let reqpath = req.path;
 
-  if ( reqpath === '/' || reqpath === '/home' ) reqpath = 'index';
   reqpath = reqpath.replace( '/', '' );
+  if ( reqpath === '' || reqpath === 'home' ) reqpath = 'index';
   const views = fs.readdirSync( './views' );
   if ( !views.includes( reqpath + '.pug' ) ) reqpath = 'coming-soon';
 
