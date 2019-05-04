@@ -1,23 +1,9 @@
 extends ./layouts/main.pug
 
 block content
+  include ./components/modal/contact.pug
   include ./components/cta/cta-14-A.pug
-
-  section.fdb-block.py-md-5
-    .container.py-md-5
-      .row.py-5
-        .col-12.col-md-8.px-5
-          p.h1 Quick Introduction
-          p.lead.
-            A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-            A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-        .col-12.col-md-4.border-left.px-5
-          p.h2 Contact
-          p.lead
-            a(href="tel:+12184644614") (218) 464-4614
-          p 306 W Superior Street, Suite 608
-
-
+  include ./components/content-home-intro.pug
   include ./components/features/features-19.pug
   include ./components/features/features-c-1.pug
   include ./components/contact/contact-3.pug

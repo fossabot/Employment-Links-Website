@@ -1,19 +1,12 @@
 /*------------------------------------------------------------*/
 /*	CARET
 /*------------------------------------------------------------*/
-$size: 7px;
+$size: 5px;
 
 $active: $primary;
 
 .nav-item .caret{
-	width: 0;
-	height: 0;
 	margin-left: 5px;
-	// margin-top: -$size/2.5;
-	border: none;
-	border-left: solid $size - 1 transparent;
-	border-right: solid $size - 1 transparent;
-	border-top: solid $size #444;
 	vertical-align: middle;
 	display: inline-block;
 	transition: .3s;
@@ -22,7 +15,7 @@ $active: $primary;
 
 .nav-item:hover .caret,
 .nav-item.active .caret{
-	border-top-color: $active;
+	color: $active;
 }
 
 
@@ -30,18 +23,12 @@ $active: $primary;
 .nav-item.dropdown{
 
 	.navbar-nav .nav-link .caret{
-		border: none;
-		border-top: solid $size - 1 transparent;
-		border-bottom: solid $size - 1 transparent;
-		border-left: solid $size #444;
+		color: #444;
 	}//caret
 
 
 	&.dropdown-right .navbar-nav .nav-link .caret{
-		border: none;
-		border-top: solid $size - 1 transparent;
-		border-bottom: solid $size - 1 transparent;
-		border-right: solid $size #444;
+		color: #444;
 		margin-left: 0;
 		margin-right: 5px;
 	}//caret at right
