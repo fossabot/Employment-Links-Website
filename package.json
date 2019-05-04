@@ -17,6 +17,7 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {
+    "@types/express": "^4.16.1",
     "eslint": "^5.16.0",
     "html2pug": "^3.0.0",
     "less-watch-compile": "^2.1.0",
