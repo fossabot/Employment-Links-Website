@@ -1,4 +1,6 @@
 @import './bootstrap/bootstrap';
+@import './froala';
+@import './bsnav/bsnav';
 @import './variables/index';
 @import './typography';
 @import './layout';
@@ -10,7 +12,11 @@
 @media screen and (max-width: 768px){
   body {
     p, a {
-      font-size: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .lead {
+      font-size: 1rem;
     }
   }
 }
@@ -21,19 +27,11 @@
 }
 
 section {
-  z-index: 0;
-
   &.opportunities {
     i {
       // text-shadow: 0px 6px 38px rgba(0, 0, 0, 0.35);
       font-size: 6rem;
       margin: 1rem;
-    }
-
-    #primary {
-      i {
-        // font-size: 9rem;
-      }
     }
   }
 
@@ -46,10 +44,6 @@ section {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.35);
     z-index: 0;
-  }
-
-  .container {
-    z-index: 2;
   }
 }
 

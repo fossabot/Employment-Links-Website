@@ -1,15 +1,24 @@
 header.navbar.navbar-expand-sm.bsnav.bsnav-sticky.bsnav-sticky-slide
-  .container
-    a.navbar-brand(href='#') Employment Links
+  .container.px-4
+    a.navbar-brand(href='/')
+      img(src="images/logo-text-b.png", height="50px")
     button.navbar-toggler.toggler-spring
       span.navbar-toggler-icon
     .collapse.navbar-collapse.justify-content-md-end
       ul.navbar-nav.navbar-mobile.mr-0
-        li.nav-item.active
-          a.nav-link(href='#') Home
-        li.nav-item
-          a.nav-link(href='#') About Us
-        li.nav-item
-          a.nav-link(href='#') Gallery
-        li.nav-item
+        li.nav-item.px-3.dropdown.dropdown-horizontal
+          a.nav-link(href='#') Services
+          ul.nav.nav-pills.navbar-nav.border-bottom.shadow-sm
+            .container.text-right.px-4
+              li.nav-item.mr-3.px-3
+                a.nav-link Test
+              li.nav-item.mr-3.px-3
+                a.nav-link Test
+              li.nav-item.pl-3
+                a.nav-link Test
+        li.nav-item.px-3
+          a.nav-link(href='#') Careers
+        li.nav-item.px-3
+          a.nav-link(href='#') Partners
+        li.nav-item.px-3
           a.nav-link(href='#') Contact
