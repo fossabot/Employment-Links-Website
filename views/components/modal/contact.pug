@@ -1,0 +1,11 @@
+.modal.fade#contact-modal(tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true")
+  .modal-dialog.modal-dialog-centered(role="document")
+    .modal-content
+      .modal-header.text-center
+        button.close(type="button" data-dismiss="modal" aria-label="Close")
+          span(aria-hidden="true") &times;
+      .modal-body
+        include ../forms/contact-quick.pug
+      .modal-footer
+        button.btn.btn-grey-500(type="button" data-dismiss="modal") Close
+        button.btn.btn-primary(type="button") Send
