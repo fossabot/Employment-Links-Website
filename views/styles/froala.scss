@@ -366,6 +366,7 @@ mark,
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
+  box-shadow: inset 0px 0px 10px rgba(207, 184, 184, 0.3);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
     .form-control {
