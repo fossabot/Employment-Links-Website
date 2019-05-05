@@ -52,6 +52,14 @@
   }
 }
 
+@media screen and (max-width: 900px){
+  .modal-dialog {
+    min-width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+}
+
 .modal-dialog-scrollable {
   display: flex; // IE10/11
   max-height: calc(100% - #{$modal-dialog-margin * 2});

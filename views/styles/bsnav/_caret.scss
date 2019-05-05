@@ -5,8 +5,15 @@ $size: 5px;
 
 $active: $primary;
 
+@media screen and (min-width: 900px){
+  .nav-item .caret {
+    display: none !important;
+  }
+
+}
+
 .nav-item .caret{
-	margin-left: 5px;
+  margin-left: 5px;
 	vertical-align: middle;
 	display: inline-block;
 	transition: .3s;

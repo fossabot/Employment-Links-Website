@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon app.js --set NODE_ENV=development",
-    "sass": "sass --watch views\\styles\\main.scss:public\\styles\\main.css",
+    "sass": "sass --watch views\\styles\\main.scss:public\\styles\\main.min.css --style compressed",
     "h2p": "html2pug < temp/html.html > temp/pug.pug"
   },
   "author": "Cameron Smith",
