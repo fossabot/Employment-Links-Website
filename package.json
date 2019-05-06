@@ -1,7 +1,7 @@
 {
   "name": "website-employment-links",
   "version": "0.1.0",
-  "description": "",
+  "description": "Website for Employment Links, employmentlinksduluth.com",
   "main": "index.js",
   "scripts": {
     "test": "nodemon app.js --set NODE_ENV=development",
@@ -9,7 +9,7 @@
     "h2p": "html2pug < temp/html.html > temp/pug.pug"
   },
   "author": "Cameron Smith",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "config": "^3.1.0",
     "express": "^4.16.4",
@@ -20,7 +20,10 @@
     "@types/express": "^4.16.1",
     "eslint": "^5.16.0",
     "html2pug": "^3.0.0",
-    "less-watch-compile": "^2.1.0",
     "nodemon": "^1.18.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csmith14/Employment-Links-Website"
   }
 }
