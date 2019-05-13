@@ -1,55 +1,52 @@
 const express = require( 'express' ),
   fs = require( 'fs' ),
-  path = require( 'path' ),
+  pathModule = require( 'path' ),
   pug = require( 'pug' ),
   config = require( 'config' );
 
-const compiler = pug.compileFile,
-  app = express();
+const app = express();
 
 port = config.get( 'port' );
 
-app.use( express.static( path.join( __dirname, '/public' ) ) );
+app.use( express.static( pathModule.join( __dirname, '/public' ) ) );
 app.set( 'views', './views' );
 app.set( 'view engine', 'pug' );
 
+const views = fs.readdirSync( './views' );
+console.log( views );
+
 /**
  * @param {Express.Request} req
- * @param {*} res
+ * @param {Express.Response} res
  * @param {function} next
  */
 function handler( req ) {
-  let reqpath = req.path;
 
-  reqpath = reqpath.replace( '/', '' );
-  if ( reqpath === '' || reqpath === 'home' ) reqpath = 'index';
-  const views = fs.readdirSync( './views' );
-  if ( !views.includes( reqpath + '.pug' ) ) reqpath = 'coming-soon';
+  /* The destination of req */
+  let path = req.path;
 
-  return reqpath;
+  /* Strip the preceding slash */
+  path = path.replace( '/', '' );
+
+  console.log( path );
+
+  /* Indicates request for 'domain.com/' or 'domain.com/home' */
+  if ( path === '' || path === 'home' ) path = 'index';
+
+  console.log( path );
+  if ( !views.includes( path + '.pug' ) ) path = 'coming-soon';
+
+  return path;
 }
 
 app.use( ( req, res ) => {
-  const page = handler( req );
-  res.render( page, {
+  const path = handler( req );
+  res.render( path, {
     'cache'    : false,
-    'filename' : page,
-    'page'     : page
+    'filename' : path,
+    'page'     : path
   } );
 } );
-
-
-// app.get( '/', ( req, res ) => res.render( 'index', {
-//   'cache'    : false,
-//   'filename' : 'index',
-//   'page'     : 'index'
-// } ) );
-
-// app.get( '/contact', ( req, res ) => res.render( 'contact', {
-//   'cache'    : false,
-//   'filename' : 'contact',
-//   'page'     : 'contact'
-// } ) );
 
 
 
