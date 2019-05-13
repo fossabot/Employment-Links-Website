@@ -1,0 +1,10 @@
+extends ./layouts/main.pug
+
+block content
+  .container-fluid(style="width: 100vw; height: 100vh")
+    .flex-row
+      include ./components/content-7-eeo.pug
+
+block pageScripts
+  script(src='/scripts/home.js')
+

@@ -32,7 +32,28 @@ section.fdb-block.pt-0
                   input.form-control(type='email', placeholder='Subject')
               .row.mt-4
                 .col
+                  p.lead Department
+                  .form-check
+                    input.form-check-input(type='radio' id='radio1' name='radio')
+                    label.form-check-label(for='radio1') Human Resources
+                  .form-check
+                    input.form-check-input(type='radio' id='radio2' name='radio')
+                    label.form-check-label(for='radio2') Recruiting
+                  .form-check
+                    input.form-check-input(type='radio' id='radio3' name='radio')
+                    label.form-check-label(for='radio3') Scheduling
+              .row.mt-4
+                .col
                   textarea.form-control(name='message', rows='3', placeholder='How can we help?')
+              .row.mt-4
+                .col
+                  p.lead How would you rate your interaction with your site?
+                  select.form-control
+                    option 5 Stars
+                    option 4 Stars
+                    option 3 Stars
+                    option 2 Stars
+                    option 1 Stars
               .row.mt-4
                 .col
                   button.btn.btn-primary(type='submit') Submit
