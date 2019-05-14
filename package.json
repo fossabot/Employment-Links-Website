@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nodemon app.js --set NODE_ENV=development",
     "sass": "sass --watch views\\styles\\main.scss:public\\styles\\main.min.css --style compressed",
-    "h2p": "html2pug < temp/html.html > temp/pug.pug"
+    "h2p": "html2pug < temp/html.html > temp/pug.pug",
+    "start": "node app.js"
   },
   "author": "Cameron Smith",
   "license": "MIT",

@@ -8,3 +8,6 @@
 3. **Responsive layout,  custom theme**
       - For the styling and layout, I leveraged a somewhat personally-configured Bootstrap v4, utilizing their development package which containes uncompiled SASS rather than CSS, and incorporating it within my custom styles. An example is shown below:
       ![code-1](../../public/images/code-1.png)
+4. **Create an image slider**
+      - The home page features an image slider
+5. ****
