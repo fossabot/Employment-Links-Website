@@ -1,7 +1,7 @@
 const express = require( 'express' ),
   fs = require( 'fs' ),
   pathModule = require( 'path' ),
-  rfs = require( 'rotating-file-stram' ),
+  rfs = require( 'rotating-file-stream' ),
   morgan = require( 'morgan' ),
   config = require( 'config' );
 
@@ -12,7 +12,7 @@ const app = express(),
   // create a rotating write stream
   accessLogStream = rfs( 'access.log', {
     'interval' : '1d', // rotate daily
-    'path'     : path.join( __dirname, 'log' )
+    'path'     : pathModule.join( __dirname, 'log' )
   } );
 
 app.use( morgan( 'combined', {
