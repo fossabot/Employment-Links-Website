@@ -4,6 +4,7 @@
   "description": "Website for Employment Links, employmentlinksduluth.com",
   "main": "index.js",
   "scripts": {
+		"commit": "git add -A && git-cz -a",
     "test": "nodemon app.js --set NODE_ENV=development",
     "sass": "sass --watch views\\styles\\main.scss:public\\styles\\main.min.css --style compressed",
     "h2p": "html2pug < temp/html.html > temp/pug.pug",
@@ -11,6 +12,11 @@
   },
   "author": "Cameron Smith",
   "license": "MIT",
+	"config":{
+		"commitizen":{
+			"path": "cz-conventional-changelog"
+		}
+	},
   "dependencies": {
     "config": "^3.1.0",
     "express": "^4.16.4",
@@ -20,9 +26,29 @@
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-json-files": "^0.6.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
     "html2pug": "^3.0.0",
-    "nodemon": "^1.18.11"
+    "markdown-it": "^8.4.2",
+    "markdown-it-attrs": "^2.4.1",
+    "markdown-it-charts": "^1.0.5",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-github-preamble": "^1.0.0",
+    "markdown-it-span": "^1.0.0",
+    "markdownlint": "^0.15.0",
+    "nodemon": "^1.18.11",
+    "prettier": "^1.18.2",
+    "semantic-release": "^15.13.16"
   },
   "repository": {
     "type": "git",
