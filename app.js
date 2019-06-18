@@ -23,66 +23,41 @@ app.use(
 
 const staticOptions = {
 	'dotfiles': 'ignore',
-	// 'etag': false,
 	'extensions': ['html'],
-	'index': false,
-	// 'maxAge': '1d',
+	'index': true,
 	'redirect': false
-	// 'setHeaders': function ( res, path, stat ) {
-	// 	res.set( 'x-timestamp', Date.now() )
-	// }
 }
 
-/* Returns a shallow index of the contents of './views' */
-// const views = fs.readdirSync( './public/pages' )
+function sendFileResolved ( res, path ) {
+	res.sendFile( `./${path}`, { 'root': './public' },
+		err => {
+			if ( err ) console.log( err )
+			else console.log( 'Sent: ' + path )
+		}
+	)
+}
 
-app.get( '/images/*', ( req, res, next ) => {
+app.get( '/images/*', ( req, res ) => {
 	const reqpath = req.path.replace( 'images', 'imgs' )
-	res.sendFile(
-		`/${reqpath}`,
-		{
-			'root': './public'
-		},
-		err => {
-			if ( err ) console.log( err )
-			else console.log( 'Sent: ' + reqpath )
-		}
-	)
+	sendFileResolved( res, reqpath )
 } )
 
-app.get( '/scripts/*', ( req, res, next ) => {
+app.get( '/scripts/*', ( req, res ) => {
 	const reqpath = req.path
-	res.sendFile(
-		`./${reqpath}`,
-		{
-			'root': './public'
-		},
-		err => {
-			if ( err ) console.log( err )
-			else console.log( 'Sent: ' + reqpath )
-		}
-	)
+	sendFileResolved( res, reqpath )
 } )
 
-app.get( '/styles/*', ( req, res, next ) => {
+app.get( '/styles/*', ( req, res ) => {
 	const reqpath = req.path
-	res.sendFile(
-		`./${reqpath}`,
-		{
-			'root': './public'
-		},
-		err => {
-			if ( err ) console.log( err )
-			else console.log( 'Sent: ' + reqpath )
-		}
-	)
+	sendFileResolved( res, reqpath )
 } )
 
-app.get( '/*', ( req, res, next ) => {
-	const reqpath = req.path
+app.get( '/*', ( req, res ) => {
+	const reqpath = 'pages/' + req.path
 	let filename = req.path.split( '/' ).pop()
 
-	let srvpath = reqpath
+  let srvpath = reqpath
+
 	if ( filename ) {
 		filename = filename.replace( 'home', 'index' )
 		filename = filename.includes( '.html' ) ? filename : filename + '.html'
@@ -93,16 +68,7 @@ app.get( '/*', ( req, res, next ) => {
 			.join( '/' )
 	}
 
-	res.sendFile(
-		`./pages/${srvpath}`,
-		{
-			'root': './public'
-		},
-		err => {
-			if ( err ) console.log( err )
-			else console.log( 'Sent: ' + reqpath )
-		}
-	)
+	sendFileResolved( res, srvpath )
 } )
 
 app.listen( port, () => console.log( `Server listening on port ${port}` ) )

@@ -1,0 +1,43 @@
+/*------------------------------------------------------------*/
+/*	CARET
+/*------------------------------------------------------------*/
+$size: 5px;
+
+$active: $primary;
+
+@media screen and (min-width: 900px){
+  .nav-item .caret {
+    display: none !important;
+  }
+
+}
+
+.nav-item .caret{
+  margin-left: 5px;
+	vertical-align: middle;
+	display: inline-block;
+	transition: .3s;
+}//caret
+
+
+.nav-item:hover .caret,
+.nav-item.active .caret{
+	color: $active;
+}
+
+
+
+.nav-item.dropdown{
+
+	.navbar-nav .nav-link .caret{
+		color: #444;
+	}//caret
+
+
+	&.dropdown-right .navbar-nav .nav-link .caret{
+		color: #444;
+		margin-left: 0;
+		margin-right: 5px;
+	}//caret at right
+
+}//nav-item.dropdown

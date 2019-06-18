@@ -1,0 +1,27 @@
+/* stylelint-disable  */
+
+header {
+  min-height: 50px;
+  border-bottom-style: solid;
+  border-bottom-color: #eee;
+
+  a.nav-link {
+    font-size: 1.3rem;
+  }
+
+  li.active {
+    a.nav-link {
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        height: 3px;
+        width: 100%;
+        background-color: $primary;
+      }
+    }
+  }
+
+}

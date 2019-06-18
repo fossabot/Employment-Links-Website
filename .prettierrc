@@ -1,5 +1,6 @@
 {
   "htmlWhitespaceSensitivity": "ignore",
   "printWidth": 200,
-  "proseWrap": "never"
+  "proseWrap": "never",
+  "bracketSpacing": true
 }

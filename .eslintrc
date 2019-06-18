@@ -1,6 +1,6 @@
 {
 	"root": true,
-	"extends": ["standard"],
+	"extends": ["standard", "prettier"],
 	"plugins": [
 		"import",
 		"node",
@@ -30,7 +30,14 @@
 		"json-files/no-branch-in-dependencies": "error",
 		"json-files/require-license": "error",
 		"json-files/sort-package-json": "error",
-		"no-tabs": "off",
+    "no-tabs": "off",
+    "no-multi-spaces":[
+      "error", {"ignoreEOLComments": true, "exceptions":{
+        "Property": true,
+        "VariableDeclarator": true,
+        "ImportDeclaration": true
+      }}
+    ],
 		"object-curly-newline": [
 			"error",
 			{
@@ -46,9 +53,9 @@
 				}
 			}
 		],
-		"quote-props": ["error", "always"],
+    "quote-props": ["error", "always"],
+    "quotes":["error", "single"],
 		"padded-blocks": "off",
-		"prettier/prettier": "off",
 		"semi": ["error", "never"],
 		"space-before-blocks": ["error", {
 			"functions": "always"

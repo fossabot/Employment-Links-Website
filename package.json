@@ -1,17 +1,17 @@
 {
   "name": "website-employment-links",
-  "version": "0.1.0",
   "description": "Website for Employment Links, employmentlinksduluth.com",
+  "version": "0.1.0",
+  "author": "Cameron Smith",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "commit": "git add -A && git-cz -a",
-    "test": "nodemon app.js --set NODE_ENV=development",
-    "sass": "sass --watch views\\styles\\main.scss:public\\styles\\main.min.css --style compressed",
-    "h2p": "html2pug < temp/html.html > temp/pug.pug",
-    "start": "node app.js"
+    "start": "node app.js",
+    "start:test": "nodemon app.js --set NODE_ENV=development",
+    "sass:watch": "sass --watch .\\styles\\styles.scss:public\\styles\\main.min.css --style compressed"
   },
-  "author": "Cameron Smith",
-  "license": "MIT",
+  "private": true,
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -21,14 +21,17 @@
     "config": "^3.1.0",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
-    "pug": "^2.0.3",
     "rotating-file-stream": "^1.4.1"
   },
   "devDependencies": {
+    "@centerforopenscience/markdown-it-video": "^1.0.0",
     "@types/express": "^4.16.1",
+    "ava": "^2.1.0",
+    "ava-spec": "^1.1.1",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-json": "^1.4.0",
@@ -37,9 +40,9 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
-    "html2pug": "^3.0.0",
     "js-yaml": "^3.13.1",
     "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.2.4",
     "markdown-it-attrs": "^2.4.1",
     "markdown-it-charts": "^1.0.5",
     "markdown-it-container": "^2.0.0",
@@ -54,5 +57,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/csmith14/Employment-Links-Website"
+  },
+  "homepage": "https://github.com/csmith14/Employment-Links-Website#readme",
+  "bugs": {
+    "url": "https://github.com/csmith14/Employment-Links-Website/issues"
   }
 }
