@@ -1,0 +1,22 @@
+module.exports = function ( title, name, description ) {
+	return `
+<head>
+  <meta charset="utf-8" />
+
+  <title>${name} | ${title}</title>
+
+  <meta name="description" content="${description}" />
+
+  <meta name="theme-color" content="#fafafa" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="apple-touch-icon" href="/icons/icon.png" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+
+  <link type="text/css" rel="stylesheet" href="/styles/main.min.css" />
+</head>
+`
+}
