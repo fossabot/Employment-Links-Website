@@ -139,3 +139,5 @@ $RECYCLE.BIN/
 **/*.code-workspace
 public/imgs
 log
+temp
+views-html
