@@ -4,7 +4,7 @@
   "description": "Website for Employment Links, employmentlinksduluth.com",
   "main": "index.js",
   "scripts": {
-		"commit": "git add -A && git-cz -a",
+    "commit": "git add -A && git-cz -a",
     "test": "nodemon app.js --set NODE_ENV=development",
     "sass": "sass --watch views\\styles\\main.scss:public\\styles\\main.min.css --style compressed",
     "h2p": "html2pug < temp/html.html > temp/pug.pug",
@@ -12,14 +12,14 @@
   },
   "author": "Cameron Smith",
   "license": "MIT",
-	"config":{
-		"commitizen":{
-			"path": "cz-conventional-changelog"
-		}
-	},
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "config": "^3.1.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "morgan": "^1.9.1",
     "pug": "^2.0.3",
     "rotating-file-stream": "^1.4.1"
@@ -44,9 +44,10 @@
     "markdown-it-container": "^2.0.0",
     "markdown-it-footnote": "^3.0.1",
     "markdown-it-github-preamble": "^1.0.0",
+    "markdown-it-include": "^1.1.0",
     "markdown-it-span": "^1.0.0",
     "markdownlint": "^0.15.0",
-    "nodemon": "^1.18.11",
+    "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "semantic-release": "^15.13.16"
   },
