@@ -60,9 +60,6 @@
 		"space-before-blocks": ["error", {
 			"functions": "always"
 		}],
-		"space-in-parens": ["error", "always", {
-			"exceptions": ["empty"]
-		}],
 		"eol-last": "off",
 		"no-lonely-if": "error",
 		"padding-line-between-statements": [

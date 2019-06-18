@@ -2,32 +2,27 @@ const path = require( 'path' )
 const yaml = require( 'js-yaml' )
 const fs = require( 'fs' )
 
+const modal = require( './components/modal' )
+
 const md = require( 'markdown-it' )( {
 	'linkify': true,
 	'html': true
-} )
-const attrs = require( 'markdown-it-attrs' )
-const containers = require( 'markdown-it-container' )
+} ).use( require( 'markdown-it-attrs' ) )
 
 const [
-	target, dryRun
+	target, flag
 ] = process.argv.slice( 2, 4 )
-
-md.use( attrs )
-md.use( containers, 'fdb-block' )
-
-console.log( target )
+const dryRun = flag === '--dry'
 
 const fileContent = fs.readFileSync( target, {
 	'encoding': 'utf8'
 } )
 
+const outputDir = path.resolve( __dirname, '../public/pages' )
+
 const frontMatter = fileContent.split( '...' )[0].split( '---' )[1]
 const config = yaml.load( frontMatter )
-
-const outputPath = path.join( path.resolve( __dirname, '../public/pages' ), config.file.path, config.file.filename )
-
-console.log( outputPath )
+const outputPath = path.join( outputDir, config.file.path, config.file.filename )
 
 const content = fileContent
 	.split( '...' ) /*           Holyyyyyy shit. */
@@ -37,11 +32,18 @@ const content = fileContent
 	.slice( 2 ) /*                   Horrendous. */
 	.join( '\n' ) /*              Yet effective. */
 
-const output = md.render( content )
+const body = {
+}
+
+if ( config.body.modals ) {
+	body.modals = config.body.modals.map( obj => modal( obj.title, obj.id, obj.icon || null, obj.body ) )
+}
+
+body.content = md.render( content )
 
 const docHead = require( './components/head' )( config.page.title, config.page.name, config.page.description )
 
-const document = require( './document' )( docHead, output )
+const document = require( './document' )( docHead, body )
 
 console.log( '\n' )
 if ( dryRun ) {

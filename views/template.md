@@ -1,16 +1,30 @@
+<!-- markdownlint-disable -->
 ---
-page:
-  title      : Employment Links
-  name       : Home
-  description: Bridging the gap between job seekers and employers for more than 20 years
+    # Configuration -- page identity
+    page:
+      title      : Employment Links
+      name       : Home
+      description: Bridging the gap between job seekers and employers for more than 20 years
 
-file:
-  publicPath:
-    - '/'
-    - '/home'
-    - '/index.html'
-  path: ./pages/
-  name: index.html
+    # Configuration -- file output
+    file:
+      path: /
+      filename: index2.html
+
+    # Modifications to standard document <head>
+    head:
+      links:
+        # -
+          #    href: https://someAwesomeThing.com/somepath.adobeAcrobat.napster
+          #    rel: stylesheet
+
+    close:
+      scripts:
+        # - https://someAwesomeThing.com/somepath.adobeAcrobat.napster
 ...
+<!-- markdownlint-enable -->
 
-# Heading 1 {.class1 .class2}
+Heading 1 {.class1 .class2}
+---
+
+some body

@@ -18,14 +18,18 @@
           #    href: https://someAwesomeThing.com/somepath.adobeAcrobat.napster
           #    rel: stylesheet
 
+    body:
+      modals:
+        -
+          id: 'contact-modal'
+          title: 'Quick Contact'
+          body: ../../components/forms/quick-contact
+
     close:
       scripts:
         # - https://someAwesomeThing.com/somepath.adobeAcrobat.napster
 ...
 <!-- markdownlint-enable -->
 
-::: fdb-block
-<!--  -->
-# Heading 1 {.class1 .class2}
-<!--  -->
-:::
+Heading 1 {.class1 .class2}
+===

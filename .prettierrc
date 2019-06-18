@@ -2,5 +2,7 @@
   "htmlWhitespaceSensitivity": "ignore",
   "printWidth": 200,
   "proseWrap": "never",
-  "bracketSpacing": true
+  "bracketSpacing": true,
+  "tabWidth": 2,
+  "useTabs": true
 }
