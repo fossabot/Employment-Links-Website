@@ -9,7 +9,8 @@ file:
     - '/'
     - '/home'
     - '/index.html'
-  path: ./pages/index.html
+  path: ./pages/
+  name: index.html
 ...
 
 # Heading 1 {.class1 .class2}
