@@ -27,6 +27,6 @@ test.afterEach.always('Roll up the Server Instance', async (t) => {
 
 test('Responds to request at root', t => {
 	request(server)
-		.get('/')
+		.get('/').
 		.expect(200, t.pass())
 })

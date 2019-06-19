@@ -7,11 +7,6 @@ const serveStatic = require('serve-static')
 const rfs = require('rotating-file-stream')
 const morgan = require('morgan')
 
-const config = require('config')
-
-/* Public port to expose (to NginX) */
-const port = config.get('port')
-
 const app = express()
 
 const accessLogStream = rfs('access.log', {
@@ -40,18 +35,19 @@ const generalOptions = {
 	dotfiles: 'ignore'
 }
 
-/* For requests to routes along the /styles/ and /scripts/ routes */
-app.use('/', serveStatic(pathModule.join(__dirname, 'public'), generalOptions))
+const pathModifier = (req, res, next) => {
+	if (req.url.includes('home')) req.url = req.url.replace('home', 'index')
+	next()
+}
 
-/* For the pages */
-app.use('/', serveStatic(pathModule.join(__dirname, 'public', 'pages'), pagesOptions))
+/* For requests to routes along the /styles/ and /scripts/ routes */
+app.use('/', serveStatic(pathModule.join(__dirname, '..', 'public'), generalOptions))
 
 /* For <img> src values that still have the old path */
-app.use('/images', serveStatic(pathModule.join(__dirname, 'public', 'imgs'), generalOptions))
+app.use('/images', serveStatic(pathModule.join(__dirname, '..', 'public', 'imgs'), generalOptions))
 
-// app.use('/', (req, res, next) => {
-//   if (req.path.includes('images')) { req.path = req.path.replace('images', 'imgs') }
-// 	next()
-// })
+/* For the pages */
+app.use('/', pathModifier, serveStatic(pathModule.join(__dirname, '..', 'public', 'pages'), pagesOptions))
 
-module.exports = app.listen(port, () => console.log(`Server listening on port ${port}`))
+// ANCHOR module.exports
+module.exports = app
