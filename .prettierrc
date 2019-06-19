@@ -4,5 +4,7 @@
   "proseWrap": "never",
   "bracketSpacing": true,
   "tabWidth": 2,
-  "useTabs": true
+  "useTabs": true,
+  "semi": false,
+  "singleQuote": true
 }

@@ -19,54 +19,55 @@
 		"commonjs": true
 	},
 	"rules": {
-		"array-bracket-newline": ["error", {
-			"minItems": 2
-		}],
-		"brace-style": ["error", "1tbs", {
-			"allowSingleLine": true
-		}],
-		"function-paren-newline": ["error", "consistent"],
-		"indent": ["error", "tab"],
-		"json-files/no-branch-in-dependencies": "error",
-		"json-files/require-license": "error",
-		"json-files/sort-package-json": "error",
-    "no-tabs": "off",
-    "no-multi-spaces":[
-      "error", {"ignoreEOLComments": true, "exceptions":{
-        "Property": true,
-        "VariableDeclarator": true,
-        "ImportDeclaration": true
-      }}
-    ],
-		"object-curly-newline": [
-			"error",
-			{
-				"ExportDeclaration": {
-					"minProperties": 3,
-					"multiline": true
-				},
-				"ImportDeclaration": "never",
-				"ObjectExpression": "always",
-				"ObjectPattern": {
-					"minProperties": 3,
-					"multiline": true
-				}
-			}
-		],
-    "quote-props": ["error", "always"],
+		"prettier/prettier": "error",
+	// 	"array-bracket-newline": ["error", {
+	// 		"minItems": 2
+	// 	}],
+	// 	"brace-style": ["error", "1tbs", {
+	// 		"allowSingleLine": true
+	// 	}],
+	// 	"function-paren-newline": ["error", "consistent"],
+	// 	"indent": ["error", "tab"],
+	// 	"json-files/no-branch-in-dependencies": "error",
+	// 	"json-files/require-license": "error",
+	// 	"json-files/sort-package-json": "error",
+  //   "no-tabs": "off",
+  //   "no-multi-spaces":[
+  //     "error", {"ignoreEOLComments": true, "exceptions":{
+  //       "Property": true,
+  //       "VariableDeclarator": true,
+  //       "ImportDeclaration": true
+  //     }}
+  //   ],
+	// 	"object-curly-newline": [
+	// 		"error",
+	// 		{
+	// 			"ExportDeclaration": {
+	// 				"minProperties": 3,
+	// 				"multiline": true
+	// 			},
+	// 			"ImportDeclaration": "never",
+	// 			"ObjectExpression": "always",
+	// 			"ObjectPattern": {
+	// 				"minProperties": 3,
+	// 				"multiline": true
+	// 			}
+	// 		}
+	// 	],
+  //   "quote-props": ["error", "always"],
     "quotes":["error", "single"],
-		"padded-blocks": "off",
-		"semi": ["error", "never"],
-		"space-before-blocks": ["error", {
-			"functions": "always"
-		}],
-		"eol-last": "off",
-		"no-lonely-if": "error",
-		"padding-line-between-statements": [
-			"error"
-		],
-		"array-element-newline": [
-			"error", "consistent"
-		]
+	// 	"padded-blocks": "off",
+		"semi": ["error", "never"]
+	// 	"space-before-blocks": ["error", {
+	// 		"functions": "always"
+	// 	}],
+	// 	"eol-last": "off",
+	// 	"no-lonely-if": "error",
+	// 	"padding-line-between-statements": [
+	// 		"error"
+	// 	],
+	// 	"array-element-newline": [
+	// 		"error", "consistent"
+	// 	]
 	}
 }

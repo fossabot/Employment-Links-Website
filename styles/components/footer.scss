@@ -3,6 +3,7 @@ footer.fixed-bottom {
 }
 
 footer {
+  background-color: #1f222d;
 
   a {
     &.text-secondary {
@@ -17,14 +18,37 @@ footer {
 
   p {
     &.footer-nav-title {
+      color: #fff;
       font-size: 1.2rem;
       font-weight: 500;
     }
   }
 
+  #footer-contact {
+    a {
+      span.h3{
+        color: #fff;
+      }
 
+      span {
+        color: #ffffff
+      }
+    }
+
+    p.lead {
+      a {
+        color: #fff;
+      }
+    }
+  }
 }
 
 #subfooter {
-  background-color: #25282b;
+  background-color: #13161F;
+}
+
+
+#subfooter-copyright {
+  margin-top: 18px;
+  background-color: #0E111A;
 }

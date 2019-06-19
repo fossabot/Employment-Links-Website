@@ -1,5 +1,5 @@
 module.exports = `
-<footer class="fdb-block bg-dark py-5" >
+<footer class="fdb-block py-5" >
 <div class="container">
   <div class="row align-items-top text-center pt-5" id="footer-main-row">
     <div class="col-4 col-sm-6 col-md-2 text-left">
@@ -61,7 +61,7 @@ module.exports = `
         <div class="col-4 text-center align-middle pt-3"><img class="mb-1 mx-3" src="images/coc.png" width="200px" alt="Duluth Chamber of Commerce Logo" style="max-width: 20vw" /></div>
         <div class="col-4 text-center align-middle"><img class="mb-1 mx-3" src="images/rotary.png" width="150px" alt="Rotary International Logo" style="max-width: 20vw" /></div>
       </div>
-      <div class="row mt-3"><div class="col text-center text-secondary">© 2018 Cameron Smith. All Rights Reserved</div></div>
+      <div class="row mt-3"><div id="subfooter-copyright" class="col text-center text-white py-3 mt-3" style="position:absolute;bottom:0;left:0;width:100vw;background-color: #1A1C1F">© 2018 Cameron Smith &mdash; All Rights Reserved</div></div>
     </div>
   </div>
 </div>

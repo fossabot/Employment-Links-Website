@@ -1,4 +1,5 @@
 const express = require('express')
+const serveStatic = require('serve-static')
 const pathModule = require('path')
 const rfs = require('rotating-file-stream')
 const morgan = require('morgan')
@@ -10,58 +11,41 @@ const app = express()
 const port = config.get('port')
 
 const accessLogStream = rfs('access.log', {
-	'interval': '1d', // rotate daily
-	'path': pathModule.join(__dirname, 'log')
+	interval: '1d', // rotate daily
+	path: pathModule.join(__dirname, 'log')
 })
 
 app.use(
 	morgan('combined', {
-		'stream': accessLogStream
+		stream: accessLogStream
 	})
 )
 
-function sendFileResolved(res, path) {
-	res.sendFile(
-		`./${path}`,
-		{
-			'root': './public',
-			'maxAge': process.env.NODE_ENV === 'development' ? 100 : 24 * 60 * 60 * 1000
-		},
-		err => {
-			if (err) console.log(err)
-			else console.log('Sent: ' + path)
-		}
-	)
+/** @type {import('serve-static').ServeStaticOptions} */
+const pagesOptions = {
+	extensions: ['html', 'js'],
+	maxAge: 0,
+	dotfiles: 'ignore'
 }
 
-app.get('/images/*', (req, res) => {
-	const reqpath = req.path.replace('images', 'imgs')
-	sendFileResolved(res, reqpath)
-})
+/** @type {import('serve-static').ServeStaticOptions} */
+const generalOptions = {
+	maxAge: 0,
+	dotfiles: 'ignore'
+}
 
-app.get('/scripts/*', (req, res) => {
-	const reqpath = req.path
-	sendFileResolved(res, reqpath)
-})
+/* For requests to /styles/:file and /scripts/:file */
+app.use('/', serveStatic(pathModule.join(__dirname, 'public'), generalOptions))
 
-app.get('/styles/*', (req, res) => {
-	const reqpath = req.path
-	sendFileResolved(res, reqpath)
-})
+/* For the pages themselves */
+app.use('/', serveStatic(pathModule.join(__dirname, 'public', 'pages'), pagesOptions))
 
-app.get('/*', (req, res) => {
-	const reqpath = req.path
-	let filename = req.path.split('/').pop()
+/* For <img> src values that still have the old path */
+app.use('/images', serveStatic(pathModule.join(__dirname, 'public', 'imgs'), generalOptions))
 
-	let srvpath = reqpath
-
-	if (filename) {
-		let correctedFilename = filename.replace('home', 'index')
-    correctedFilename = correctedFilename.includes('.html') ? correctedFilename : correctedFilename + '.html'
-    srvpath = reqpath.replace(filename, correctedFilename)
-	}
-
-	sendFileResolved(res, srvpath)
+app.use('/', (req, res, next) => {
+	if (req.path.includes('images')) req.path = req.path.replace('images', 'imgs')
+	next()
 })
 
 app.listen(port, () => console.log(`Server listening on port ${port}`))
