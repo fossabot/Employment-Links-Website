@@ -3,6 +3,8 @@
 
 # *LinksDuluth.com* #
 
+![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/csmith14/Employment-Links-Website.svg?logo=code%20climate)
+
 </div>
 <!-- markdownlint-enable -->
 
