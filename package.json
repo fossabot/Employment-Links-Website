@@ -7,8 +7,8 @@
   "main": "index.js",
   "scripts": {
     "commit": "git add -A && git-cz -a",
-    "start": "node app.js",
-    "start:test": "nodemon app.js --set NODE_ENV=development",
+    "start": "node index.js",
+    "start:test": "nodemon index.js --set NODE_ENV=development",
     "sass:watch": "sass --watch .\\styles\\styles.scss:public\\styles\\main.min.css --style compressed"
   },
   "private": true,
@@ -28,6 +28,7 @@
     "@types/express": "^4.16.1",
     "ava": "^2.1.0",
     "ava-spec": "^1.1.1",
+    "chalk": "^2.4.2",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.16.0",
@@ -52,7 +53,9 @@
     "markdownlint": "^0.15.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
-    "semantic-release": "^15.13.16"
+    "semantic-release": "^15.13.16",
+    "superagent": "^5.1.0",
+    "supertest": "^4.0.2"
   },
   "repository": {
     "type": "git",
